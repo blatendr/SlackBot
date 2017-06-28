@@ -139,21 +139,21 @@
 -    r = r["url"]
 -    return r
 -
--
+-#error catching function
 -def on_error(ws, error):
 -    print("SOME ERROR HAS HAPPENED", error)
 -
--
+-#websocket close function
 -def on_close(ws):
 -    conn.close()
 -    print("Web and Database connections closed")
 -
--
+-#websocket open function
 -def on_open(ws):
 -    print("Connection Started - Ready to have fun on Slack!")
 -
 -
--
+-#keep websocket running until terminated by user
 -r = start_rtm()
 -jarvis = Jarvis()
 -ws = websocket.WebSocketApp(r, on_message=jarvis.on_message, on_error=on_error, on_close=on_close)
